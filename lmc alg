@@ -1,0 +1,28 @@
+INP
+STA num1
+INP
+STA num2
+INP
+STA count
+loop LDA count
+BRZ ender
+SUB one
+STA count
+LDA num1
+ADD num2
+STA sum
+OUT
+LDA num2
+STA num1
+LDA sum
+STA num2
+BRA loop
+ender LDA sum
+SUB sum
+HLT
+num1 DAT
+num2 DAT
+sum DAT
+count DAT
+one DAT 1
+    
