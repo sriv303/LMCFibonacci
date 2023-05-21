@@ -3,21 +3,21 @@ STA num1
 INP
 STA num2
 INP
-STA count
+STA count #input variables, count is number of terms
 loop LDA count
-BRZ ender
+BRZ ender #finish if count = 0
 SUB one
 STA count
 LDA num1
 ADD num2
-STA sum
+STA sum #generate fibonacci sequence
 OUT
-LDA num2
+LDA num2 #updating values
 STA num1
 LDA sum
 STA num2
 BRA loop
-ender LDA sum
+ender LDA sum #subtracting sum to account for one extra being added
 SUB sum
 HLT
 num1 DAT
